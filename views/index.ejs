@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Siswa</title>
+</head>
+<body>
+  <h1>Daftar Siswa</h1>
+  <a href="/tambah">Tambah Data</a>
+  
+  <table border="1">
+    <tr>
+      <th>Nama</th>
+      <th>Kelas</th>
+      <th>Aksi</th>
+    </tr>
+    <% siswa.forEach(s => { %>
+    <tr>
+      <td><%= s.nama %></td>
+      <td><%= s.kelas %></td>
+      <td>
+        <a href="/edit/<%= s.id %>">Edit</a>
+        <a href="/hapus/<%= s.id %>">Hapus</a>
+      </td>
+    </tr>
+    <% }); %>
+  </table>
+</body>
+</html>
